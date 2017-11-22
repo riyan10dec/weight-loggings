@@ -12,6 +12,7 @@ import { EditorComponent } from './editor/editor.component';
 import { AppRoutingModule }     from './app.routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgDatepickerModule } from 'ng2-datepicker';
+import { SortGridPipe } from './sortPipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NgDatepickerModule } from 'ng2-datepicker';
     WeightDetailComponent,
     EditorComponent,
     DashboardComponent,
+    SortGridPipe,
   ],
   imports: [
     AppRoutingModule,

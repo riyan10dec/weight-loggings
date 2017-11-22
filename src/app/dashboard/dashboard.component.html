@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let w of weights">
+        <tr *ngFor="let w of weights | sortgrid : '-date'">
             <th scope="row">{{w.date | date: 'yyyy-MM-dd'}}</th>
             <td>{{w.min}}</td>
             <td>{{w.max}}</td>
