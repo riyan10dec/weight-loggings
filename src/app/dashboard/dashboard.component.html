@@ -1,0 +1,35 @@
+<h1>
+  Weight Logging Dashboard
+</h1>
+<div class="row mce-text-center">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Max</th>
+          <th scope="col">Min</th>
+          <th scope="col">Variance</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let w of weights">
+            <th scope="row">{{w.date | date: 'yyyy-MM-dd'}}</th>
+            <td>{{w.min}}</td>
+            <td>{{w.max}}</td>
+            <td>{{w.max - w.min}}</td>
+            <td><a routerLink="/detail/{{w.id}}">Edit</a> </td>
+        </tr>
+        <tr>
+            <th scope="row">Average</th>
+            <td>{{ averageMin }}</td>
+            <td>{{ averageMax }}</td>
+            <td>{{ averageVar }}</td>
+            <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<router-outlet></router-outlet>
