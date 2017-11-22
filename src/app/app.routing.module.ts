@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: WeightDetailComponent },
-  { path: 'editor', component: EditorComponent }
+  { path: 'editor/:state/:id', component: EditorComponent }
 ];
 
 @NgModule({

@@ -1,3 +1,19 @@
-<p>
-  editor works!
-</p>
+<div *ngIf="weight">
+  <div><span>id: </span>{{weight.id}}</div>
+  <div>
+    <label>Date
+      <ng-datepicker [(ngModel)]="weight.date" [options]="options"></ng-datepicker>
+    </label>
+    <label>Min:
+      <input [(ngModel)]="weight.min" placeholder="min"/>
+    </label>
+
+    <label>Max:
+      <input [(ngModel)]="weight.max" placeholder="max"/>
+    </label>
+
+  </div>
+  <button *ngIf="state == 'edit'" (click)="updateWeight(weight)">update</button>
+  <button *ngIf="state != 'edit'" (click)="newWeight(weight)">create</button>
+  <button (click)="goBack()">go back</button>
+</div>

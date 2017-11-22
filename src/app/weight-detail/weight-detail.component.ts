@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+// tslint:disable-next-line:import-spacing
 import { Weight }         from '../weight';
 import { WeightService }  from '../services/weight.service';
 @Component({

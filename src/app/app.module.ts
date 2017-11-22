@@ -11,6 +11,7 @@ import { EditorComponent } from './editor/editor.component';
 
 import { AppRoutingModule }     from './app.routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgDatepickerModule } from 'ng2-datepicker';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppRoutingModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NgDatepickerModule,
   ],
   providers: [WeightService],
   bootstrap: [AppComponent]

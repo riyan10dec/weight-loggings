@@ -1,14 +1,26 @@
-<div *ngIf="weight">
-  <div><span>id: </span>{{weight.id}}</div>
-  <div>
-    <label>Min:
-      <input [(ngModel)]="weight.min" placeholder="min"/>
-    </label>
-
-    <label>Max:
-      <input [(ngModel)]="weight.max" placeholder="max"/>
-    </label>
-
+<h1>
+  Weight Logging Detail
+</h1>
+<div class="row mce-text-center">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+            <td>Date</td><td>{{weight.date | date : 'yyyy-MM-dd'}}</td>
+        </tr>
+        <tr>
+            <td>Min</td><td>{{weight.min}}</td>
+        </tr>
+        <tr>
+            <td>Max</td><td>{{weight.max}}</td>
+        </tr>
+        <tr>
+            <td>Variance</td><td>{{weight.max - weight.min}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <button (click)="goBack()">go back</button>
+
 </div>
+
+  <button (click)="goBack()">go back</button>

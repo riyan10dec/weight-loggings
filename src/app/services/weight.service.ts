@@ -18,6 +18,21 @@ export class WeightService {
     // Todo: send the message _after_ fetching the hero
     return of(Weights.find(w => w.id === id));
   }
+  updateWeight(weight: Weight): Observable<any> {
+    Weights.forEach(w=> {
+      if(w.id === weight.id){
+        w.max = weight.max;
+        w.min = weight.min;
+      }
+    });
+    return;
+  }
+
+  newWeight(weight: Weight): Observable<any> {
+    weight.id = Weights.length + 1;
+    Weights.push(weight);
+    return;
+  }
 }
 
 

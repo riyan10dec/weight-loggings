@@ -19,17 +19,21 @@ export class DashboardComponent implements OnInit {
     this.getWeight();
   }
   getWeight(): void {
+    this.averageMin = 0;
+    this.averageMax = 0;
+    this.averageVar = 0;
     this.weightService.getWeights()
     .subscribe(ws => {
       this.weights = ws;
       this.weights.forEach( w => {
-        this.averageMin += w.min;
-        this.averageMax += w.max;
+        this.averageMin += +(w.min);
+        this.averageMax += +(w.max);
         this.averageVar += (w.max - w.min);
       });
-      this.averageMin = this.averageMin / ws.length;
-      this.averageMax = this.averageMax / ws.length;
-      this.averageVar = this.averageVar / ws.length;
+      console.log(this.averageMin / ws.length);
+      this.averageMin = this.averageMin / this.weights.length;
+      this.averageMax = this.averageMax / this.weights.length;
+      this.averageVar = this.averageVar / this.weights.length;
     });
   }
 }

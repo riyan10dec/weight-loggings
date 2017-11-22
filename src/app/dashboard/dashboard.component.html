@@ -7,8 +7,8 @@
       <thead>
         <tr>
           <th scope="col">Date</th>
-          <th scope="col">Max</th>
           <th scope="col">Min</th>
+          <th scope="col">Max</th>
           <th scope="col">Variance</th>
           <th scope="col">Action</th>
         </tr>
@@ -19,7 +19,7 @@
             <td>{{w.min}}</td>
             <td>{{w.max}}</td>
             <td>{{w.max - w.min}}</td>
-            <td><a routerLink="/detail/{{w.id}}">Edit</a> </td>
+            <td><a routerLink="/detail/{{w.id}}">View</a> <a routerLink="/editor/edit/{{w.id}}">Edit</a> </td>
         </tr>
         <tr>
             <th scope="row">Average</th>
@@ -32,4 +32,5 @@
     </table>
   </div>
 </div>
+<a routerLink="/editor/new/0"><span class="badge">Add New</span></a>
 <router-outlet></router-outlet>
